@@ -1,0 +1,30 @@
+{
+  "name": "realtime",
+  "version": "1.0.0",
+  "description": "A real time app built with nodejs and socket io",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon app.js"
+  },
+  "keywords": [
+    "real",
+    "time",
+    "node",
+    "js",
+    "websocket",
+    "socket",
+    "io"
+  ],
+  "author": "Etoka kingsley",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
+  }
+}
