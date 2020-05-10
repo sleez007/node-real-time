@@ -14,18 +14,15 @@ app.get('/', (req, res, next)=>{
     res.sendFile('./index.html')
 })
 
-let count = 0;
-
 io.on('connection',socket=>{
     console.log(socket)
     console.log('new connection ')
-    socket.emit('countUpdated',count);
-    socket.on('increment',()=>{
-        count++
-        //using socket.emit sends only to a particular client which is the connected one
-        //socket.emit('countUpdated',count);
-        io.emit('countUpdated',count);
+    socket.emit('message','Welcome!');
+    socket.on('sendMessage',(message)=>{
+        io.emit('message',message)
     })
-}); 
+    socket.on('disconnect',()=>console.log('closed'))
+});
+
 
 http.listen(process.env.PORT, ()=>console.log(process.env.PORT));
