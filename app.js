@@ -26,6 +26,6 @@ io.on('connection',socket=>{
         //socket.emit('countUpdated',count);
         io.emit('countUpdated',count);
     })
-});
+}); 
 
 http.listen(process.env.PORT, ()=>console.log(process.env.PORT));
