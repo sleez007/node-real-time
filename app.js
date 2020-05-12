@@ -22,6 +22,10 @@ io.on('connection',socket=>{
     //socket.emit to send to the particular connected user
     socket.emit('message',generateMessage('Welcome'));
 
+    socket.on('join', ({username, room})=>{
+        socket.join(room)
+    })
+
     //socket.broadcast.emit to send to all users except the emitting user
     socket.broadcast.emit('message', generateMessage('A new user just joined'));
 
